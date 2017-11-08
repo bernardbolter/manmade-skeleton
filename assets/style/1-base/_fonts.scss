@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'SkyhookMono-Bold';
+  src: url('fonts/skyhook.woff') format('woff'),
+      url('fonts/skyhook.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700');
+
+html {
+  font-size: 62.5%;
+}
+
+$heading-font: "SkyhookMono-Bold", "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
+
+$body-font: "Open Sans Condensed", sans-serif;

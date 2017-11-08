@@ -1,0 +1,7 @@
+/node_modules/
+/builds/
+/assets/images/
+/assets/fonts/
+/assets/videos/
+.DS_Store
+npm-debug.log
