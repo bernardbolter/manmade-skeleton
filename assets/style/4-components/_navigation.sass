@@ -1,12 +1,100 @@
 .navigation
   width: 100%
-  height: 50px
-  position: fixed
-  background: rgba(0,0,0,0.7)
-  display: flex
-  flex-direction: row
-  justify-content: flex-end
-  align-items: flex-end
 
+#navigation-button
+    margin: 0
+    display: block
+    top: 15px
+    right: 15px
+    cursor: pointer
+    position: fixed
+    z-index: 100
+
+.hamburger-line
+  fill: white
+
+#hamburger-circle
+  stroke: white
+  stroke-width: 2
+  fill: none
+
+.button
   svg
-    margin: 0 5% 0 0
+    #hamburger-line-1
+      transition: all 0.5s ease-in-out
+
+    #hamburger-line-2
+      display: block
+      transition: display 0.5s ease-in-out
+
+    #hamburger-line-3
+      transition: all 0.5s ease-in-out
+
+.button-open
+  svg
+    #hamburger-line-1
+      transform: rotate(45deg) translate(10px, -16px)
+      transition: all 0.5s ease-in-out
+      fill: $dark-text
+
+    #hamburger-line-2
+      display: none
+      transition: display 0.5s ease-in-out
+
+    #hamburger-line-3
+      transform: rotate(-45deg) translate(-22px, 2px)
+      transition: all 0.5s ease-in-out
+      fill: $dark-text
+
+    #hamburger-circle
+      stroke: $dark-text
+
+.button-dark
+  svg
+    #hamburger-line-1
+      transition: all 0.5s ease-in-out
+      fill: $dark-text
+
+    #hamburger-line-2
+      transition: all 0.5s ease-in-out
+      fill: $dark-text
+
+    #hamburger-line-3
+      transition: all 0.5s ease-in-out
+      fill: $dark-text
+
+    #hamburger-circle
+      transition: all 0.5s ease-in-out
+      stroke: $dark-text
+
+.navigation-menu
+  position: fixed
+  z-index: 50
+  left: -100%
+  width: 100%
+  height: 100%
+  background-color: rgb(255,255,255)
+  background-color: rgba(255,255,255,0.85)
+  transition: left 0.5s ease-in-out
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+  a
+    font-family: $heading-font
+    color: $dark-text
+    margin: 0
+    padding: 0 0 10px
+    font-size: 28px
+    display: block
+    text-align: center
+    text-decoration: none
+    width: auto
+
+    @media (min-width: $mobile-break)
+      font-size: 38px
+
+
+.navigation-menu-open
+  left: 0
+  transition: left 0.5s ease-in-out

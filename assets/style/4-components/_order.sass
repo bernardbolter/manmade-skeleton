@@ -1,0 +1,100 @@
+.order
+  width: 100%
+  display: block
+  background: $dark-back
+  margin: 0
+  padding: 30px 0
+
+  h1
+    font-family: $heading-font
+    font-size: 30px
+    color: $light-text
+    position: relative
+    margin: 20px 0 20px 5%
+
+    @media (min-width: $mobile-break)
+      font-size: 36px
+      margin: 20px 0 20px 5%
+      width: auto
+
+.order-container
+  max-width: 1200px
+  width: 100%
+  margin: 0 auto
+
+.order-wetransfer
+  display: flex
+  flex-direction: column
+  justify-content: center
+  width: 100%
+  margin: 0
+
+  @media (min-width: $mobile-break)
+    flex-direction: row
+    justify-content: space-around
+    width: 90%
+    margin: 0 5% 20px
+    align-items: center
+
+
+.order-wetranfer-send
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  width: 110px
+  margin: 0
+  padding: 0 3%
+
+  img
+    width: 66px
+    margin: 10px 0
+
+  a
+    width: 80px
+    height: 30px
+    border: 1px solid $light-text
+    font-family: $body-font
+    text-decoration: none
+    text-align: center
+    color: $light-text
+    font-weight: bold
+    font-size: 16px
+    line-height: 1.9
+    margin: 10px 0 0 0
+    padding: 0
+    background-color: none
+    transition: background-color 0.5 ease-in-out
+
+    &:hover
+      transition: background-color 0.5 ease-in-out
+      background-color: rgba(255,255,255,0.2)
+
+.order-wetransfer-text
+  margin: 10px 5%
+  padding: 0
+  width: 90%
+
+  @media (min-width: $mobile-break)
+    margin: 0
+    width: auto
+
+  p
+    margin: 0
+    padding: 3px 0
+    line-height: 1.5
+    font-family: $body-font
+    color: $light-text
+    font-weight: 300
+    font-size: 15px
+
+.order-return
+  font-family: $body-font
+  font-weight: 700
+  font-size: 16px
+  color: $light-text
+  width: 90%
+  margin: 10px 5%
+
+  @media (min-width: $mobile-break)
+    margin: 10px 7%

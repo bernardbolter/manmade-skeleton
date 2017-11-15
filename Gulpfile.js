@@ -42,7 +42,7 @@ var path = {
   ],
   ENTRY: './assets/js/gateway.js',
   SVG: './assets/svgs/*.svg',
-  JS: './assets/js/**/*.js',
+  JS: './assets/js/*.js',
   IMAGES: './assets/images/*',
   FONTS: [
     './assets/fonts/*.woff2',
@@ -68,7 +68,7 @@ gulp.task('html-in', function () {
     }))
     .pipe(insertLines({
       'before': /<\/body>$/,
-      'lineBefore': '<script src="http://localhost:8080/mashup.js"></script>'
+      'lineBefore': '<script src="mashup.js"></script>'
     }))
     .pipe(gulp.dest('./builds/inbound/'))
     .pipe(connect.reload());
@@ -84,7 +84,6 @@ gulp.task('html-out', function () {
       'before': /<\/body>$/,
       'lineBefore': '<script src="mashup.js"></script>'
     }))
-    .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('./builds/outbound/'));
 });
 
@@ -110,33 +109,17 @@ gulp.task('style-out', function() {
 });
 
 // JAVASCRIPT TASKS ---------------------------------------------------->>>>>>>>
-
-gulp.task("webpack-in", function(callback) {
-	// modify some webpack config options
-	var myConfig = Object.create(webpackDevConfig);
-
-	// Start a webpack-dev-server
-	new WebpackDevServer(webpack(myConfig), {
-    contentBase: "http://localhost:9090/",
-    hot: true,
-    historyApiFallback: true,
-    proxy: {
-      "*": "http://localhost:9090"
-    },
-		publicPath: "http://localhost:8080/",
-		stats: {
-			colors: true
-		},
-	}).listen(8080, "localhost", function(err) {
-		if(err) throw new gutil.PluginError("webpack-dev-server", err);
-		gutil.log("[webpack-dev-server]", "http://localhost:8080/webpack-dev-server/index.html");
-	});
+gulp.task('js-in', function() {
+  gulp.src(path.JS)
+    .pipe(concat('mashup.js'))
+    .pipe(gulp.dest('./builds/inbound/'))
+    .pipe(connect.reload());
 });
 
-gulp.task('webpack-out', function() {
-  return gulp.src('./assets/js/gateway.js')
-  .pipe(webpackStream( require('./webpack.pro.config')))
-  .pipe(gulp.dest('./builds/outbound/'));
+gulp.task('js-out', function() {
+  gulp.src(path.JS)
+    .pipe(concat('mashup.js'))
+    .pipe(gulp.dest('./builds/outbound'));
 });
 
 // SVG TASKS ---------------------------------------------------->>>>>>>>
@@ -220,10 +203,11 @@ gulp.task('watch', function() {
   gulp.watch([path.HTML], ['html-in']);
   gulp.watch([path.STYLESHEETS], ['style-in']);
   gulp.watch([path.SVG], ['svg-in', 'html-in']);
+  gulp.watch([path.JS], ['js-in']);
 });
 
-gulp.task('default', ['svg-in', 'html-in', 'style-in', 'webpack-in', 'img-in', 'fonts-in', 'connect', 'watch']);
+gulp.task('default', ['html-in', 'js-in', 'style-in', 'img-in', 'fonts-in', 'connect', 'watch']);
 
-gulp.task('outbound', ['svg-out', 'html-out', 'style-out', 'webpack-out', 'img-out', 'fonts-out']);
+gulp.task('outbound', ['html-out', 'js-out', 'style-out', 'img-out', 'fonts-out']);
 
 gulp.task('clean', ['clean-in', 'clean-out']);

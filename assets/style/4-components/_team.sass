@@ -2,8 +2,15 @@
   width: 100%
   height: auto
   background: $grey-back
-  margin: 0
+  margin: 0 auto
   padding: 0
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+
+  @media (min-width: $mobile-break)
+    display: block
 
   h1
     font-family: $heading-font
@@ -17,12 +24,43 @@
       padding: 30px 0 20px 5%
       width: auto
 
+.team-dropped
+  display: block
+
+.team-drop
+  display: inline-block
+  text-align: right
+  font-family: $body-font
+  font-weight: 300
+  color: $dark-text
+  font-size: 20px
+  margin: 8px 0 0 40px
+  cursor: pointer
+  transition: all 0.5s ease-in-out
+  letter-spacing: 0.05em
+
+  @media (min-width: $mobile-break)
+    display: none
+
+.team-wrap-on
+  transition: all 0.5s ease-in-out
+  max-height: 1500px !important
+
+.team-drop-stop
+  display: none
+
 .team-component-wrap
   width: 100%
   display: flex
   flex-direction: row
   justify-content: flex-end
   flex-wrap: wrap
+  max-height: 0
+  overflow: hidden
+  max-width: 1200px
+  margin: 0 auto
+  @media (min-width: $mobile-break)
+    max-height: 2000px
 
 .team-component
   width: 90%

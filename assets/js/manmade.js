@@ -1,9 +1,73 @@
-<footer class="footer">
-</footer>
+(function($){
+  // can do something like
+  $('#navigation-button').click(function() {
+    $('#navigation-button').toggleClass( "button-open" );
+    $('.navigation-menu').toggleClass( "navigation-menu-open");
+  });
 
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
-<script>
+  $('#team-drop').click(function() {
+    $('.team-component-wrap').addClass( "team-wrap-on");
+    $('.team-drop').addClass( "team-drop-stop");
+    $('#team').addClass( "team-dropped");
+  });
+
+  // SCROLL TO ACTION FROM MENU
+
+  $('a[href^="#"]').on('click', function(event) {
+
+    var target = $(this.getAttribute('href'));
+
+    if( target.length ) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+            scrollTop: target.offset().top
+        }, 1000);
+        $('#navigation-button').addClass( "button-dark" );
+        $('#navigation-button').toggleClass( "button-open" );
+        $('.navigation-menu').toggleClass( "navigation-menu-open");
+    }
+
+  });
+
+  // CHANGE NAVIGATION BUTTON WHEN BELOW HERO IMAGE
+
+  function changeNavButton(){
+    $(document).on( 'scroll', function(){
+      var toTheTop = $(document).scrollTop();
+      var theWindowHeight = $(window).height();
+      if ((toTheTop - 10) > theWindowHeight) {
+        $('#navigation-button').addClass( "button-dark" );
+      } else {
+        $('#navigation-button').removeClass( "button-dark" );
+      }
+    });
+  }
+
+  changeNavButton();
+
+  // MAKE THE HERO IMAGE FULL SCREEN
+
+  function fullscreen(){
+      jQuery('#hero').css({
+          height: jQuery(window).height()
+      });
+  }
+
+  fullscreen();
+
+  // Run the function in case of window resize
+  jQuery(window).resize(function() {
+       fullscreen();
+       changeNavButton();
+  });
+
+  $("form :input").change(function() {
+    console.log($(this).closest('form').serialize());
+  });
+
+
+})(jQuery);
+
 function initMap() {
   var manmademastering = {lat: 52.502969, lng: 13.407753};
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -192,9 +256,3 @@ function initMap() {
     map: map
   });
 }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAilW71EX9Wb2ujSPNHVvhdtvwuFoFSxGQ&callback=initMap"
-    async defer></script>
-
-</body>
-</html>

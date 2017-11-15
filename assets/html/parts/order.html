@@ -1,0 +1,210 @@
+<section class="order" id="order">
+  <div class="order-container">
+  <h1>Order</h1>
+  <div class="order-wetransfer">
+    <div class="order-wetranfer-send">
+      <img src="img/wetransfer.png" alt="We Transfer Logo" />
+      <a href="https://manmademastering.wetransfer.com/" class="pure-button">send files</a>
+    </div>
+    <div class="order-wetransfer-text">
+      <p>* send us your pre-masters</p>
+      <p>* please include each file w/ vital data including: vinyl positions, A1, A2, B1, B2. etc.  also label zip with the respective catalog number.  example - MMM-01</p>
+      <p>* We accept WAV or AIF audio files / 16 - 24 - 32bit  / 44.1kHz (or higher resolution)</p>
+    </div>
+  </div>
+
+  <p class="order-return">* Return clients please only fill required and applicable information.</p>
+
+  <form id="manmade-intake-form" class="manmade-intake-form" action="https://formspree.io/timxavier@manmademastering.com" method="POST">
+    <input type="text" name="_gotcha" style="display:none" />
+    <div class="manmade-input">
+      <label for="company">Company/Label:</label>
+      <input type="text" name="company">
+    </div>
+    <div class="manmade-input">
+      <label for="mobile_number">Mobile Number:</label>
+      <input type="text" name="mobile_number">
+    </div>
+    <div class="manmade-input">
+      <label for="name">Name:<span class="form-required">* required</span></label>
+      <input type="text" name="name" required>
+    </div>
+    <div class="manmade-input">
+      <label for="tax_id">Valid Company VAT number / or Valid Country Tax I.D.:</label>
+      <input type="text" name="tax_id">
+    </div>
+    <div class="manmade-input">
+      <label for="street_number">Street Number:</label>
+      <input type="text" name="street_number">
+    </div>
+    <div class="manmade-input">
+      <label for="email">Email:<span class="form-required">* required</span></label>
+      <input type="email" name="email" required>
+    </div>
+    <div class="manmade-input">
+      <label for="city_zip">City/ZIP:</label>
+      <input type="text" name="city_zip">
+    </div>
+    <div class="manmade-input">
+      <label for="country">Country:</label>
+      <input type="text" name="country">
+    </div>
+    <!-- BREAK FORM FIRST -->
+    <div class="manmade-form-text-1">
+      <p class="manmade-form-heading">PRESSING / MANUFACTURING SHIPPING INFORMATION:</p>
+      <p class="manmade-form-heading"><span class="manmade-form-heading-light">Please note:</span> Vinyl master lacquers will be shipped to pressing plants ONLY.</p>
+    </div>
+    <div class="manmade-input">
+      <label for="pressing_plant">Pressing Plant:</label>
+      <input type="text" name="pressing_plant">
+    </div>
+    <div class="manmade-input">
+      <label for="contact_person">Contact Person:</label>
+      <input type="text" name="contact_person">
+    </div>
+    <!-- BREAK FORM SECOND -->
+    <div class="manmade-form-text-2">
+      <p class="manmade-form-heading">PRESSING / MANUFACTURING SHIPPING INFORMATION:</p>
+      <div class="manmade-form-text-block">
+        <p class="manmade-form-heading-light">Please note:</p>
+        <div class="manmade-form-text-block-inside">
+          <p>- Backup your premaster data before submitting</p>
+          <p>- Label all source material with catalogue number and track ID</p>
+          <p>- Verify your source material for unwanted noise, drop-outs and artifacts</p>
+          <p>- Pack all data relevant for a release into zip or rar file</p>
+          <p>- Upload your data to: <a href="https://manmademastering.wetransfer.com/">https://manmademastering.wetransfer.com/</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="manmade-radio-buttons-wrap">
+    <p class="manmade-radio-buttons-title">Release Format:</p>
+      <div class="manmade-radio-buttons">
+        <input type="radio" id="vinyl" value="vinyl" name="format" /><label for="vinyl">VINYL</label>
+        <input type="radio" id="cd" value="cd" name="format" /><label for="cd">CD</label>
+        <input type="radio" id="digital" value="digital" name="format" /><label for="digital">DIGITAL</label>
+      </div>
+    </div>
+    <div class="manmade-input">
+      <label for="project_title">Project Title:</label>
+      <input type="text" name="project_title">
+    </div>
+    <div class="manmade-radio-buttons-wrap">
+    <p class="manmade-radio-buttons-title">Release Size:</p>
+      <div class="manmade-radio-buttons">
+        <input type="radio" id="12inch" value="12inch" name="size" /><label for="12inch">12"</label>
+        <input type="radio" id="10inch" value="10inch" name="size" /><label for="10inch">10"</label>
+        <input type="radio" id="7inch" value="7inch" name="size" /><label for="7inch">7"</label>
+      </div>
+    </div>
+    <div class="manmade-input">
+      <label for="release_title">Release Title:</label>
+      <input type="text" name="release_title">
+    </div>
+    <div class="manmade-form-placeholder"></div>
+    <div class="manmade-input">
+      <label for="preferred_engineer">Preferred Engineer:</label>
+      <input type="text" name="preferred_engineer">
+    </div>
+
+
+    <div class="manmade-input">
+      <label for="catalogue_number">Catalogue Number:</label>
+      <p>(as it should be engraved on you master lacquers)</p>
+      <input type="text" name="catalogue_number">
+    </div>
+    <div class="manmade-radio-buttons-wrap">
+    <p class="manmade-radio-buttons-title">Attendance:</p>
+      <div class="manmade-radio-buttons">
+        <input type="radio" id="attend_yes" value="yes" name="attendance" /><label for="attend_yes">YES</label>
+        <input type="radio" id="attend_no" value="no" name="attendance" /><label for="attend_no">NO</label>
+      </div>
+    </div>
+    <!-- BREAK FORM THIRD -->
+
+    <div class="manmade-form-text-3">
+      <p class="manmade-form-heading">Additional Engraving:</p>
+      <p class="manmade-form-heading-light">(optional, extra charges apply)</p>
+    </div>
+
+    <div class="manmade-input">
+      <label for="side_a">Side A:</label>
+      <input type="text" name="side_a">
+    </div>
+    <div class="manmade-input">
+      <label for="side_b">Side B:</label>
+      <input type="text" name="side_b">
+    </div>
+
+    <div class="manmade-form-text-3">
+      <p class="manmade-form-heading">VINYL TRACKLISTING:</p>
+    </div>
+
+    <div class="manmade-input input-short">
+      <label for="vinyl_position_1">Vinyl Position 1:</label>
+      <input type="text" name="vinyl_position_1">
+    </div>
+    <div class="manmade-input input-long">
+      <label for="track_title_1">Track Title 1:</label>
+      <input type="text" name="track_title_1">
+    </div>
+
+    <div class="manmade-input input-short">
+      <label for="vinyl_position_2">Vinyl Position 2:</label>
+      <input type="text" name="vinyl_position_2">
+    </div>
+    <div class="manmade-input input-long">
+      <label for="track_title_2">Track Title 2:</label>
+      <input type="text" name="track_title_2">
+    </div>
+
+    <div class="manmade-input input-short">
+      <label for="vinyl_position_3">Vinyl Position 3:</label>
+      <input type="text" name="vinyl_position_3">
+    </div>
+    <div class="manmade-input input-long">
+      <label for="track_title_4">Track Title 4:</label>
+      <input type="text" name="track_title_4">
+    </div>
+
+    <div class="manmade-input input-short">
+      <label for="vinyl_position_5">Vinyl Position 5:</label>
+      <input type="text" name="vinyl_position_5">
+    </div>
+    <div class="manmade-input input-long">
+      <label for="track_title_6">Track Title 6:</label>
+      <input type="text" name="track_title_6">
+    </div>
+
+    <div class="manmade-input input-short">
+      <label for="vinyl_position_7">Vinyl Position 7:</label>
+      <input type="text" name="vinyl_position_7">
+    </div>
+    <div class="manmade-input input-long">
+      <label for="track_title_8">Track Title 8:</label>
+      <input type="text" name="track_title_8">
+    </div>
+
+    <div class="manmade-input input-short">
+      <label for="vinyl_position_9">Vinyl Position 9:</label>
+      <input type="text" name="vinyl_position_9">
+    </div>
+    <div class="manmade-input input-long">
+      <label for="track_title_10">Track Title 10:</label>
+      <input type="text" name="track_title_10">
+    </div>
+
+    
+    <div class="manmade-textarea">
+      <label for="aditional_notes">Additional Notes:</label>
+      <textarea type="textarea" name="aditional_notes" /></textarea>
+    </div>
+
+    <input class="manmade-submit-form" type="submit" value="Send Form">
+  </form>
+
+    <div class="manmade-cd-submission">
+      <p>For CD submissions, please download our pdf <a href="/03_MMM_CD.pdf">here</a></p>
+    </div>
+
+  </div> <!-- ORDER CONTAINER -->
+</section>
