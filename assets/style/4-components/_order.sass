@@ -1,33 +1,36 @@
 .order
   width: 100%
   display: block
-  background: $dark-back
-  margin: 0
-  padding: 30px 0
+  margin: 0 auto
 
   h1
     font-family: $heading-font
     font-size: 30px
-    color: $light-text
+    color: $dark-text
     position: relative
-    margin: 20px 0 20px 5%
+    padding: 30px 0 20px 5%
+    margin: 0
+    width: 95%
+    background: $light-text
 
     @media (min-width: $mobile-break)
       font-size: 36px
-      margin: 20px 0 20px 5%
+      padding: 20px 0 20px 5%
       width: auto
 
 .order-container
-  max-width: 1200px
   width: 100%
   margin: 0 auto
+  background: $dark-back
+  padding: 30px 0
 
 .order-wetransfer
   display: flex
   flex-direction: column
   justify-content: center
   width: 100%
-  margin: 0
+  margin: 0 auto
+  max-width: 1200px
 
   @media (min-width: $mobile-break)
     flex-direction: row

@@ -1,6 +1,7 @@
 <section class="order" id="order">
-  <div class="order-container">
+
   <h1>Order</h1>
+  <div class="order-container">
   <div class="order-wetransfer">
     <div class="order-wetranfer-send">
       <img src="img/wetransfer.png" alt="We Transfer Logo" />
@@ -91,11 +92,15 @@
     <div class="manmade-radio-buttons-wrap">
     <p class="manmade-radio-buttons-title">Release Size:</p>
       <div class="manmade-radio-buttons">
-        <input type="radio" id="12inch" value="12inch" name="size" /><label for="12inch">12"</label>
-        <input type="radio" id="10inch" value="10inch" name="size" /><label for="10inch">10"</label>
-        <input type="radio" id="7inch" value="7inch" name="size" /><label for="7inch">7"</label>
+        <input class="manmade-radio" type="radio" id="12inch" value="12inch" name="size" />
+          <label for="12inch">12"</label>
+        <input type="radio" id="10inch" value="10inch" name="size" />
+          <label for="10inch">10"</label>
+        <input type="radio" id="7inch" value="7inch" name="size" />
+          <label for="7inch">7"</label>
       </div>
     </div>
+
     <div class="manmade-input">
       <label for="release_title">Release Title:</label>
       <input type="text" name="release_title">
@@ -106,7 +111,6 @@
       <input type="text" name="preferred_engineer">
     </div>
 
-
     <div class="manmade-input">
       <label for="catalogue_number">Catalogue Number:</label>
       <p>(as it should be engraved on you master lacquers)</p>
@@ -115,8 +119,10 @@
     <div class="manmade-radio-buttons-wrap">
     <p class="manmade-radio-buttons-title">Attendance:</p>
       <div class="manmade-radio-buttons">
-        <input type="radio" id="attend_yes" value="yes" name="attendance" /><label for="attend_yes">YES</label>
-        <input type="radio" id="attend_no" value="no" name="attendance" /><label for="attend_no">NO</label>
+        <input type="radio" id="attend_yes" value="yes" name="attendance" />
+          <label for="attend_yes">YES</label>
+        <input type="radio" id="attend_no" value="no" name="attendance" />
+          <label for="attend_no">NO</label>
       </div>
     </div>
     <!-- BREAK FORM THIRD -->
@@ -193,7 +199,7 @@
       <input type="text" name="track_title_10">
     </div>
 
-    
+
     <div class="manmade-textarea">
       <label for="aditional_notes">Additional Notes:</label>
       <textarea type="textarea" name="aditional_notes" /></textarea>
@@ -202,9 +208,16 @@
     <input class="manmade-submit-form" type="submit" value="Send Form">
   </form>
 
+  <div class="manmade-order-footer">
+
     <div class="manmade-cd-submission">
-      <p>For CD submissions, please download our pdf <a href="/03_MMM_CD.pdf">here</a></p>
+      <p>If you require CD mastering and DDP service, Please download the following CD PDF intake form, fill in all relevant information digitally and save the data to the PDF and email back to Office at MMM.</p>
+      <a href="/03_MMM_CD.pdf">Download PDF</a>
     </div>
+
+    <img src="img/itunes.png" alt="Mastered for iTunes logo" />
+
+  </div>
 
   </div> <!-- ORDER CONTAINER -->
 </section>

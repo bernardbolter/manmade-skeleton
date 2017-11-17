@@ -5,10 +5,10 @@
     $('.navigation-menu').toggleClass( "navigation-menu-open");
   });
 
-  $('#team-drop').click(function() {
-    $('.team-component-wrap').addClass( "team-wrap-on");
-    $('.team-drop').addClass( "team-drop-stop");
-    $('#team').addClass( "team-dropped");
+  $('#team-button').click(function() {
+    $('.team-component-wrap').toggleClass( "team-wrap-on");
+    $('.team-button').toggleClass( "team-button-on");
+    $('#team').toggleClass( "team-dropped");
   });
 
   // SCROLL TO ACTION FROM MENU
@@ -35,7 +35,7 @@
     $(document).on( 'scroll', function(){
       var toTheTop = $(document).scrollTop();
       var theWindowHeight = $(window).height();
-      if ((toTheTop - 10) > theWindowHeight) {
+      if ((toTheTop + 10) > theWindowHeight) {
         $('#navigation-button').addClass( "button-dark" );
       } else {
         $('#navigation-button').removeClass( "button-dark" );
@@ -60,11 +60,6 @@
        fullscreen();
        changeNavButton();
   });
-
-  $("form :input").change(function() {
-    console.log($(this).closest('form').serialize());
-  });
-
 
 })(jQuery);
 

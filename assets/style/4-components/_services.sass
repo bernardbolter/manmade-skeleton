@@ -3,9 +3,13 @@
   height: auto
   background: url('img/services-background.jpg') no-repeat center center
   background-size: cover
+
+.services-container
+  max-width: 1200px
   display: flex
   flex-direction: column
   justify-content: center
+  margin: 0 auto
 
   @media (min-width: $mobile-break)
     flex-direction: row
@@ -15,7 +19,7 @@
   margin: 30px 5%
 
   @media (min-width: $mobile-break)
-    width: 60%
+    width: 70%
 
   h2
     font-family: $heading-font
@@ -45,6 +49,9 @@
   transition: all 1s ease-in-out
   color: $dark-text
 
+  @media (min-width: $mobile-break)
+    width: 50%
+
   &:hover
     background: rgba(255,255,255,0.9)
     text-decoration: underline
@@ -60,6 +67,3 @@
     color: $dark-text
     font-size: 36px
     text-align: center
-
-  @media (min-width: $mobile-break)
-    width: 50%

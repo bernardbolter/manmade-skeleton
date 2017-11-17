@@ -4,10 +4,6 @@
   background: $grey-back
   margin: 0 auto
   padding: 0
-  display: flex
-  flex-direction: row
-  justify-content: space-between
-  align-items: center
 
   @media (min-width: $mobile-break)
     display: block
@@ -16,13 +12,45 @@
     font-family: $heading-font
     font-size: 30px
     color: $dark-text
-    padding: 30px 0 20px 5%
+    padding: 30px 0 20px 10px
     margin: 0
 
     @media (min-width: $mobile-break)
       font-size: 36px
-      padding: 30px 0 20px 5%
       width: auto
+
+.team-button
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  align-items: center
+  cursor: pointer
+  margin: 0 0 0 5%
+  svg
+    transition: all 0.5s ease-in-out
+
+    path
+      fill: $dark-text
+
+    circle
+      fill: none
+      stroke: $dark-text
+      stroke-width: 1.3px
+
+.team-button-on
+  svg
+    transform: rotate(180deg)
+    transition: all 0.5s ease-in-out
+
+.team-line
+  stroke: $dark-text
+  stroke-linecap: round
+  stroke-width: 1.5
+
+#team-circle
+  stroke: $dark-text
+  stroke-width: 1.5
+  fill: none
 
 .team-dropped
   display: block
@@ -43,8 +71,8 @@
     display: none
 
 .team-wrap-on
-  transition: all 0.5s ease-in-out
-  max-height: 1500px !important
+  transition: max-height 1s ease-in-out
+  max-height: 2500px !important
 
 .team-drop-stop
   display: none
@@ -59,8 +87,7 @@
   overflow: hidden
   max-width: 1200px
   margin: 0 auto
-  @media (min-width: $mobile-break)
-    max-height: 2000px
+  transition: max-height 1s ease-in-out
 
 .team-component
   width: 90%
@@ -83,6 +110,16 @@
     color: $dark-text
     margin: 0
     padding: 0
+
+  p
+    font-family: $body-font
+    font-size: 14px
+    font-weight: 700
+    color: $dark-text
+    margin: 20px 0 10px 0
+    padding: 0
+    line-height: 1.5
+    text-indent: 20px
 
   img
     width: 100%

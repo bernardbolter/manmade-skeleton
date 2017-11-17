@@ -4,18 +4,20 @@
 #navigation-button
     margin: 0
     display: block
-    top: 15px
-    right: 15px
+    top: 20px
+    right: 20px
     cursor: pointer
     position: fixed
     z-index: 100
 
 .hamburger-line
-  fill: white
+  stroke: white
+  stroke-linecap: round
+  stroke-width: 1.5
 
 #hamburger-circle
   stroke: white
-  stroke-width: 2
+  stroke-width: 1.5
   fill: none
 
 .button
@@ -33,18 +35,18 @@
 .button-open
   svg
     #hamburger-line-1
-      transform: rotate(45deg) translate(10px, -16px)
+      transform: rotate(45deg) translate(9px, -12.5px)
       transition: all 0.5s ease-in-out
-      fill: $dark-text
+      stroke: $dark-text
 
     #hamburger-line-2
       display: none
       transition: display 0.5s ease-in-out
 
     #hamburger-line-3
-      transform: rotate(-45deg) translate(-22px, 2px)
+      transform: rotate(-45deg) translate(-19px, 1.5px)
       transition: all 0.5s ease-in-out
-      fill: $dark-text
+      stroke: $dark-text
 
     #hamburger-circle
       stroke: $dark-text
@@ -53,15 +55,15 @@
   svg
     #hamburger-line-1
       transition: all 0.5s ease-in-out
-      fill: $dark-text
+      stroke: $dark-text
 
     #hamburger-line-2
       transition: all 0.5s ease-in-out
-      fill: $dark-text
+      stroke: $dark-text
 
     #hamburger-line-3
       transition: all 0.5s ease-in-out
-      fill: $dark-text
+      stroke: $dark-text
 
     #hamburger-circle
       transition: all 0.5s ease-in-out

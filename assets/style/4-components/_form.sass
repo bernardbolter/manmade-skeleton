@@ -133,7 +133,7 @@
 
 .manmade-radio-buttons-wrap
   width: 100%
-  margin: 10px 0
+  margin: 0 0 10px 0
   display: flex
   flex-direction: column
   justify-content: space-around
@@ -157,14 +157,53 @@
   align-items: center
 
   input
-    margin: 0 10px
+    appearance: none
+    position: relative
+    right: 0
+    bottom: 0
+    left: 0
+    height: 30px
+    width: 30px
+    background: $form-back
+    border: none
+    color: $dark-text
+    cursor: pointer
+    display: inline-block
+    margin: 0
+    outline: none
+    position: relative
+    z-index: 1000
+
+  input:hover
+    background: #9faab7
+
+  input:checked
+    background: $light-text
+
+  input:checked::before
+    height: 30px
+    width: 30px
+    position: absolute
+    content: '✔'
+    display: inline-block
+    font-size: 18px
+    text-align: center
+    line-height: 30px
+
+  input:checked::after
+    background: #40e0d0
+    content: ''
+    display: block
+    position: relative
+    z-index: 100
 
   label
     font-family: $body-font
     color: $light-text
     font-size: 18px
     font-weight: 700
-    margin: 0 5px 0 0
+    margin: 0 10px 0 5px
+    cursor: pointer
 
 .manmade-form-placeholder
   display: none
@@ -216,14 +255,24 @@
   color: $required
   margin: 0 0 0 7px
 
+.manmade-order-footer
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+  img
+    width: 100px
+    align-self: flex-end
+    margin: 0 5% 0 0
+
 .manmade-cd-submission
   width: 90%
-  margin: 20px 5%
+  margin: 20px 5% 0
 
   p
     font-family: $body-font
     color: $light-text
-    font-size: 18px
+    font-size: 14px
     font-weight: 700
     margin: 0 0 5px 0
 
@@ -231,6 +280,9 @@
     display: inline-block
     text-decoration: none
     color: $light-text
+    font-family: $heading-font
+    font-size: 16px
+    margin: 10px 0
 
     &:hover
       text-decoration: underline
