@@ -42,22 +42,6 @@
     color: $light-text
     font-size: 13px
 
-.input-short
-  width: 37%
-  margin: 10px 3% 10px 0
-
-  @media (min-width: $mobile-break)
-    margin: 10px 3% 10px 2%
-    width: 35%
-
-.input-long
-  width: 60%
-  margin: 10px 0
-
-  @media (min-width: $mobile-break)
-    width: 58%
-    margin: 10px 2% 10px 0
-
 .manmade-form-text-1
   width: 100%
   margin: 16px 0
@@ -65,10 +49,6 @@
   @media (min-width: $mobile-break)
     width: 96%
     margin: 20px 2%
-
-.manmade-form-text-3
-  width: 96%
-  margin: 16px 2%
 
 .manmade-form-heading
   font-size: 14px
@@ -90,11 +70,19 @@
 
 .manmade-form-text-2
   width: 100%
-  margin: 16px 0
+  margin: 16px 0 5px
 
   @media (min-width: $mobile-break)
     width: 96%
     margin: 20px 2%
+
+.manmade-form-text-3
+  width: 100%
+  margin: 16px 0
+
+  @media (min-width: $mobile-break)
+    width: 96%
+    margin: 20px 2% 0
 
 .manmade-form-text-block
   display: flex
@@ -139,16 +127,34 @@
       opacity: 1
       text-decoration: underline
 
+.manmade-short-buttons-wrap
+  width: 100%
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: space-between
+
+  @media (min-width: $mobile-break)
+    width: 96%
+    margin: 0 2% 12px
+
+  .manmade-radio-buttons-wrap
+    width: 48% !important
+    margin: 10px 0 !important
+
+    @media (min-width: 1000px)
+      width: 23% !important
+      margin: 10px 0 !important
+
 .manmade-radio-buttons-wrap
   width: 100%
   margin: 0 0 10px 0
   display: flex
   flex-direction: column
-  justify-content: space-around
 
   @media (min-width: $mobile-break)
     width: 46%
-    margin: 10px 2%
+    margin: 0 2%
 
 .manmade-radio-buttons-title
   font-family: $body-font
@@ -156,6 +162,13 @@
   font-size: 12px
   font-weight: 700
   margin-bottom: 5px
+
+.manmade-radio-buttons-title-2
+  font-family: $body-font
+  color: $light-text
+  font-size: 12px
+  font-weight: 700
+  margin: 0 0 5px
 
 .manmade-radio-buttons
   width: 100%
@@ -235,17 +248,24 @@
     margin: 0 0 5px 0
 
   textarea
-    width: 100%
+    width: 96%
     height: 100px
     background: $form-back
-    font-size: 18px
+    font-size: 16px
     padding: 0
     border: none
     margin: 5px 0 0 0
+    padding: 2%
 
     &:focus
       border: 1px solid white
       background: $form-focus
+
+  p
+    color: $light-text
+    margin: 4px 0 10px
+    font-weight: 300
+    font-size: 11.5px
 
 .manmade-submit-form
   width: 200px
