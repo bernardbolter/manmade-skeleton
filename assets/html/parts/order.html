@@ -43,7 +43,7 @@
       <input type="email" name="email" required>
     </div>
     <div class="manmade-input">
-      <label for="city_zip">City/ZIP:</label>
+      <label for="city_zip">City & Zip (postleitzal)</label>
       <input type="text" name="city_zip">
     </div>
     <div class="manmade-input">
@@ -80,10 +80,19 @@
     <div class="manmade-radio-buttons-wrap">
     <p class="manmade-radio-buttons-title">Release Format:</p>
       <div class="manmade-radio-buttons">
-        <input type="checkbox" id="vinyl" value="vinyl" name="format" /><label for="vinyl">VINYL</label>
-        <input type="checkbox" id="cd" value="cd" name="format" /><label for="cd">CD</label>
-        <input type="checkbox" id="digital" value="digital" name="format" /><label for="digital">DIGITAL</label>
-      </div>
+        <div>
+          <input type="checkbox" id="vinyl" value="vinyl" name="format" /><label for="vinyl">VINYL</label>
+        </div>
+        <div>
+          <input type="checkbox" id="cd" value="cd" name="format" /><label for="cd">CD</label>
+        </div>
+        <div>
+          <input type="checkbox" id="digital" value="digital" name="format" /><label for="digital">DIGITAL</label>
+        </div>
+        <div>
+          <input type="checkbox" id="cutting_only" value="cutting_only" name="format" /><label for="cutting_only">CUTTING ONLY</label>
+        </div>
+        </div>
     </div>
     <div class="manmade-input">
       <label for="project_title">Project Title:</label>
