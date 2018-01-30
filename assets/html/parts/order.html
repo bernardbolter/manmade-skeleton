@@ -14,9 +14,9 @@
     </div>
   </div>
 
-  <p class="order-return">* Return clients please only fill required and applicable information.</p>
+  <p class="order-return">* Return clients please only fill in required and applicable information.</p>
 
-  <form id="manmade-intake-form" class="manmade-intake-form" action="https://formspree.io/bernbolter@icloud.com" method="POST">
+  <form id="manmade-intake-form" class="manmade-intake-form" action="https://formspree.io/office@manmademastering.com" method="POST">
     <input type="text" name="_gotcha" style="display:none" />
     <div class="manmade-input">
       <label for="company">Company/Label:</label>
@@ -91,13 +91,13 @@
     </div>
 
     <div class="manmade-radio-buttons-wrap">
-    <p class="manmade-radio-buttons-title">Release Size:</p>
+    <p class="manmade-radio-buttons-title">Vinyl Diameter Format:</p>
       <div class="manmade-radio-buttons">
-        <input type="checkbox" id="12inch" value="12inch" name="size" />
+        <input type="checkbox" id="12inch" value="12inch" name="vinyl_diameter_size" />
           <label for="12inch">12"</label>
-        <input type="checkbox" id="10inch" value="10inch" name="size" />
+        <input type="checkbox" id="10inch" value="10inch" name="vinyl_diameter_size" />
           <label for="10inch">10"</label>
-        <input type="checkbox" id="7inch" value="7inch" name="size" />
+        <input type="checkbox" id="7inch" value="7inch" name="vinyl_diameter_size" />
           <label for="7inch">7"</label>
       </div>
     </div>
@@ -113,7 +113,7 @@
     </div>
 
     <div class="manmade-input">
-      <label for="catalogue_number">Catalogue Number:</label>
+      <label for="catalogue_number">Catalogue Number: <span class="cat-number-span">(exp. MMM-001)</span></label>
       <p>(as it should be engraved on you master lacquers)</p>
       <input type="text" name="catalogue_number">
     </div>
@@ -135,81 +135,20 @@
     </div>
 
     <div class="manmade-input">
-      <label for="side_a">Side A:</label>
-      <input type="text" name="side_a">
+      <label for="engraving_side_a">Side A:</label>
+      <input type="text" name="engraving_side_a">
     </div>
     <div class="manmade-input">
-      <label for="side_b">Side B:</label>
-      <input type="text" name="side_b">
+      <label for="emgraving_side_b">Side B:</label>
+      <input type="text" name="engraving_side_b">
     </div>
 
     <!-- VINYL TRACKS -->
 
-    <div class="manmade-short-buttons-wrap">
-
-    <div class="manmade-radio-buttons-wrap">
-    <p class="manmade-radio-buttons-title">Digital Masters:</p>
-      <div class="manmade-radio-buttons">
-        <input type="radio" id="digital_masters_yes" value="yes" name="digital_masters" />
-          <label for="digital_masters_yes">YES</label>
-        <input type="radio" id="digital_masters_no" value="no" name="digital_masters" />
-          <label for="digital_masters_no">NO</label>
-      </div>
-    </div>
-
-    <div class="manmade-radio-buttons-wrap">
-    <p class="manmade-radio-buttons-title">Mfit Masters:</p>
-      <div class="manmade-radio-buttons">
-        <input type="radio" id="Mfit_masters_yes" value="yes" name="Mfit_masters" />
-          <label for="Mfit_masters_yes">YES</label>
-        <input type="radio" id="Mfit_masters_no" value="no" name="Mfit_masters" />
-          <label for="Mfit_masters_no">NO</label>
-      </div>
-    </div>
-
-    <div class="manmade-radio-buttons-wrap">
-    <p class="manmade-radio-buttons-title">ISRC Codes To Be Encoded:</p>
-      <div class="manmade-radio-buttons">
-        <input type="radio" id="ISRC_codes_yes" value="yes" name="ISRC_codes" />
-          <label for="ISRC_codes_yes">YES</label>
-        <input type="radio" id="ISRC_codes_no" value="no" name="ISRC_codes" />
-          <label for="ISRC_codes_no">NO</label>
-      </div>
-    </div>
-
-    <div class="manmade-radio-buttons-wrap">
-    <p class="manmade-radio-buttons-title">Vinyl:</p>
-      <div class="manmade-radio-buttons">
-        <input type="radio" id="is_vinyl_yes" value="yes" name="vinyl" />
-          <label for="is_vinyl_yes">YES</label>
-        <input type="radio" id="is_vinyl_no" value="no" name="vinyl" />
-          <label for="is_vinyl_no">NO</label>
-      </div>
-    </div>
-
-  </div> <!-- end of short button wrap -->
-
-    <div class="manmade-input">
-      <label for="vinyl_speed">If Vinyl, Which Speed:</label>
-      <input type="text" name="vinyl_speed">
-    </div>
-
-    <div class="manmade-radio-buttons-wrap">
-    <p class="manmade-radio-buttons-title-2">If Vinyl, Which Size:</p>
-      <div class="manmade-radio-buttons">
-        <input type="checkbox" id="12inch" value="12inch" name="vinyl_size" />
-          <label for="12inch">12"</label>
-        <input type="checkbox" id="10inch" value="10inch" name="vinyl_size" />
-          <label for="10inch">10"</label>
-        <input type="checkbox" id="7inch" value="7inch" name="vinyl_size" />
-          <label for="7inch">7"</label>
-      </div>
-    </div>
-
     <div class="manmade-textarea">
-      <label for="title_tracks_and_running_order">Track Titles and Running Order:</label>
+      <label for="vinyl_positions">Track Titles and Running Order:</label>
       <p>Be sure to site vinyl positions, A1, A2, B1, B2, C1, etc. Also include song titles and time duration.</p>
-      <textarea type="textarea" name="title_tracks_and_running_order" /></textarea>
+      <textarea type="textarea" name="vinyl_positions" /></textarea>
     </div>
 
     <div class="manmade-textarea">
@@ -223,7 +162,7 @@
   <div class="manmade-order-footer">
 
     <div class="manmade-cd-submission">
-      <p>If you require CD mastering and DDP service, Please download the following CD PDF intake form, fill in all relevant information digitally and save the data to the PDF and email back to Office at MMM.</p>
+      <p>If you require CD mastering and DDP service, Please download the following CD PDF intake form, fill in all relevant information digitally and save the data to the PDF and email back to office@manmademastering.com</p>
       <a href="/03_MMM_CD.pdf">Download PDF</a>
     </div>
 

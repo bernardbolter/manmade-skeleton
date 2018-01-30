@@ -14,6 +14,7 @@ var gulp = require('gulp'),
     // SASS
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
+    replace = require('gulp-replace'),
     // JS
     webpack = require('webpack'),
     webpackStream = require('webpack-stream'),
@@ -67,24 +68,30 @@ gulp.task('html-in', function () {
       basepath: '@file'
     }))
     .pipe(insertLines({
-      'before': /<\/body>$/,
-      'lineBefore': '<script src="mashup.js"></script>'
+      'before': /<\/head>$/,
+      'lineBefore': '<link rel="stylesheet" type="text/css" href="style.css" />'
     }))
     .pipe(gulp.dest('./builds/inbound/'))
-    .pipe(connect.reload());
 });
 
 gulp.task('html-out', function () {
+  var version = Math.floor(Math.random() * 1000);
   gulp.src('./assets/html/index.html')
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
     }))
     .pipe(insertLines({
-      'before': /<\/body>$/,
-      'lineBefore': '<script src="mashup.js"></script>'
+      'before': /<\/head>$/,
+      'lineBefore': '<link rel="stylesheet" type="text/css" href="style-' + version + '.css" />'
     }))
     .pipe(gulp.dest('./builds/outbound/'));
+
+  gulp.src(path.STYLESHEETS)
+		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+		.pipe(autoprefixer('last 2 versions', 'safari 5', 'ie8', 'ie9', 'opera 12.1', 'ios 6', 'android 4'))
+		.pipe(concat('style-' + version + '.css'))
+		.pipe(gulp.dest('./builds/outbound/'));
 });
 
 // STYLE SHEET TASKS ---------------------------------------------------->>>>>>>>
@@ -101,6 +108,7 @@ gulp.task('style-in', function() {
 });
 
 gulp.task('style-out', function() {
+  var filename = 'style-' + getDate() + '.css';
 	gulp.src(path.STYLESHEETS)
 		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
 		.pipe(autoprefixer('last 2 versions', 'safari 5', 'ie8', 'ie9', 'opera 12.1', 'ios 6', 'android 4'))
@@ -201,13 +209,13 @@ gulp.task('connect', function() {
 
 gulp.task('watch', function() {
   gulp.watch([path.HTML], ['html-in']);
-  gulp.watch([path.STYLESHEETS], ['style-in']);
+  gulp.watch([path.STYLESHEETS], ['html-in', 'style-in']);
   gulp.watch([path.SVG], ['svg-in', 'html-in']);
   gulp.watch([path.JS], ['js-in']);
 });
 
-gulp.task('default', ['html-in', 'js-in', 'style-in', 'img-in', 'fonts-in', 'connect', 'watch']);
+gulp.task('default', ['html-in', 'style-in', 'js-in', 'img-in', 'fonts-in', 'connect', 'watch']);
 
-gulp.task('outbound', ['html-out', 'js-out', 'style-out', 'img-out', 'fonts-out']);
+gulp.task('outbound', ['html-out', 'js-out', 'img-out', 'fonts-out']);
 
 gulp.task('clean', ['clean-in', 'clean-out']);

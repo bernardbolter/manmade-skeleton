@@ -1,8 +1,27 @@
 .services
   width: 100%
   height: auto
-  background: url('img/services-background.jpg') no-repeat center center
+
+  h1
+    font-family: $heading-font
+    font-size: 30px
+    color: $dark-text
+    position: relative
+    padding: 30px 0 20px 5%
+    margin: 0
+    width: 95%
+    background: $light-text
+
+    @media (min-width: $mobile-break)
+      font-size: 36px
+      padding: 20px 0 20px 5%
+      width: auto
+
+.services-text
+  width: 100%
+  background: url('img/services.jpg') no-repeat center center
   background-size: cover
+  border-bottom: 10px solid $form-focus
 
 .services-container
   max-width: 1200px
@@ -20,6 +39,10 @@
 
   @media (min-width: $mobile-break)
     width: 70%
+    margin: 15px 0 15px 2.5%
+    padding: 15px 7.5% 15px 100px
+    background: rgba(0,0,0,0.2)
+    border-radius: 130px 0 0 130px
 
   h2
     font-family: $heading-font
